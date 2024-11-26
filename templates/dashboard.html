@@ -66,14 +66,19 @@
             <div class="grid grid-cols-2 gap-0 place-items-stretch items-center xl:px-52">
                 <div class="mx-auto sm:px-10 px-5 py-3 w-2/3 mt-5 border-2 rounded-md xl:w-80 ">
                     <label class=" flex lg:text-lg text-[10px]" for="Size">Size</label>
-                    <input class=" border-2 rounded-md h-6 w-full text-center lg:text-sm text-[8px]" type="text"
-                        id="Size" name="Size" required placeholder="Masukan ukuran">
+                    <input {% if size %} value="{{ size }}" {% endif %}
+                        class=" border-2 rounded-md h-6 w-full text-center lg:text-sm text-[8px]" type="text" id="Size"
+                        name="Size" required placeholder="Masukan ukuran">
                 </div>
                 <div class="mx-auto sm:px-10 px-5 py-3 w-2/3  mt-5 border-2 rounded-md xl:w-80 ">
                     <label class=" flex lg:text-lg text-[10px]" for="Schedule">Schedule</label>
                     <select class=" border-2 rounded-md h-6 w-full lg:text-sm text-[8px]  text-center " name="Schedule"
                         id="Schedule" required>
-                        <option value="" disabled selected hidden class="text-[3px]">Pilih</option>
+                        {% if component_1 %}
+                        <option value="{{ Schedule }}" selected>{{ Schedule }}</option>
+                        {% else %}
+                        <option value="" disabled selected hidden>Pilih</option>
+                        {% endif %}
                         {% for x in schedules %}
                         <option value="{{ x[0] }}">{{ x[0] }}</option>
                         {% endfor %}
@@ -83,7 +88,11 @@
                     <label class=" flex lg:text-lg text-[10px] " for="Component1">Component 1</label>
                     <select class=" border-2 rounded-md h-6 w-full lg:text-sm text-[8px]  text-center" name="Component1"
                         id="Component1" required>
-                        <option value="" disabled selected hidden class="">Pilih</option>
+                        {% if component_1 %}
+                        <option value="{{ component_1 }}" selected>{{ component_1 }}</option>
+                        {% else %}
+                        <option value="" disabled selected hidden>Pilih</option>
+                        {% endif %}
                         {% for x in component1 %}
                         <option value="{{ x[0] }}">{{ x[0] }}</option>
                         {% endfor %}
@@ -93,7 +102,11 @@
                     <label class=" flex lg:text-lg text-[10px] " for="Component2">Component 2</label>
                     <select class=" border-2 rounded-md h-6 w-full lg:text-sm text-[8px] text-center" name="Component2"
                         id="Component2" required>
-                        <option value="" disabled selected hidden class="">Pilih</option>
+                        {% if component_2 %}
+                        <option value="{{ component_2 }}" selected>{{ component_2 }}</option>
+                        {% else %}
+                        <option value="" disabled selected hidden>Pilih</option>
+                        {% endif %}
                         {% for x in component2 %}
                         <option value="{{ x[0] }}">{{ x[0] }}</option>
                         {% endfor %}

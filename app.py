@@ -133,7 +133,7 @@ def predict():
     cursor.close()
     
     # Buat response
-    return render_template("dashboard.html",schedules=schedules, component1 = component1, component2 = component2, F = F, S = S, prediction="{}".format(prediction))
+    return render_template("dashboard.html",schedules=schedules, component1 = component1, component2 = component2, F = F, S = S, component_1 = component_1, component_2 = component_2, size = size, Schedule = Schedule, prediction="{}".format(prediction))
 
 @app.route('/multi')
 def multi():

@@ -126,7 +126,7 @@
                         </thead>
                         <tbody id="tableBody" class="overflow-scroll min-w-full">
                             <tr id="isi">
-                                <td colspan="5" class="text-center p-4">Tidak ada data</td>
+                                <td colspan="5" class="text-center p-4 opacity-35 text-3xl">Tidak ada data</td>
                             </tr>
                         </tbody>
                     </table>
@@ -225,11 +225,11 @@
 
                     const tableRow = document.createElement("tr");
                     tableRow.innerHTML = `
-                            <td class="border border-gray-300 p-2">${index}</td>
                             <td class="border border-gray-300 p-2">${row[0] || ''}</td>
                             <td class="border border-gray-300 p-2">${row[1] || ''}</td>
                             <td class="border border-gray-300 p-2">${row[2] || ''}</td>
                             <td class="border border-gray-300 p-2">${row[3] || ''}</td>
+                            <td class="border border-gray-300 p-2">${row[4] || ''}</td>
                         `;
                     tableBody.appendChild(tableRow);
                 });
